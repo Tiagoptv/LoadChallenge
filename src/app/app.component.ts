@@ -24,7 +24,6 @@ export class AppComponent implements OnInit, OnDestroy {
         if(data.hasOwnProperty(key)){
           console.log(data[key]);
           // this.iCountries[i].cmmnName = data[key].name.common;
-          // //this.iCountries[i].ntvName = data[key].name.official;
           // this.iCountries[i].ntvName = data[key].name.nativeName;
           // this.iCountries[i].pop = data[key].population;
           // this.iCountries[i].region = data[key].region;

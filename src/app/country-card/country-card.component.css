@@ -1,5 +1,9 @@
-.header {
-  padding: 60px;
+.div{
+  width: 150px;
+}
+
+.div body {
+  padding: 1rem;
   text-align: center;
   font-size: 30px;
 }

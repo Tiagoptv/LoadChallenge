@@ -6,6 +6,6 @@ import { Component, Input } from "@angular/core";
 })
 
 export class CountryCardComponent {
-  @Input() country: object[];
+  @Input() country: object;
 
 }

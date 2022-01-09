@@ -1,5 +1,6 @@
 <div>
-  <div class="grid" style="padding: 60px;">
+  <p *ngIf="isFetching">Fetching data...</p>
+  <div *ngIf="!isFetching" class="grid" style="padding: 60px;">
     <app-country class="item" *ngFor="let c of countries" [country]="[c.name.common]" routerLink="/details"></app-country>
   </div>
 </div>

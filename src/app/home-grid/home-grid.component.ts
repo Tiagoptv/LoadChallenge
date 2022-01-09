@@ -10,10 +10,10 @@ import { ICountry } from '../country';
   styleUrls: ['./home-grid.component.css']
 })
 export class HomeGridComponent implements OnInit, OnDestroy {
-  title = 'load-challenge';
   countries: object[];
   private countryListSubs: Subscription;
-  iCountries: ICountry[] = [];
+  isFetching = false;
+  // iCountries: ICountry[] = [];
 
   constructor(private cService: CountriesService, private http: HttpClient) {
     this.http.get<any>('https://restcountries.com/v3.1/all').toPromise().then(data => {
@@ -34,7 +34,7 @@ export class HomeGridComponent implements OnInit, OnDestroy {
           // this.iCountries[i].languages = data[key].languages;
           // this.iCountries[i].borderCountries = data[key].borders;
           // this.iCountries[i].flag = data[key].flags;
-          i++;
+          // i++;
         }
       }
     })
@@ -42,12 +42,14 @@ export class HomeGridComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    //this.cService.fetchCountries();
     this.countryListSubs = this.cService.countriesChanged.subscribe(
       (countries) => {
         this.countries = countries;
+        this.isFetching = false;
       }
-    );
+      );
+      this.isFetching = true;
+      this.cService.fetchCountries();
   }
 
   ngOnDestroy(): void {

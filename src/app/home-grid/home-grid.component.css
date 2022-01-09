@@ -1,0 +1,77 @@
+.div input{
+  background-color: hsl(207, 26%, 17%);
+  padding: 3.75rem;
+}
+
+.grid {
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap:3.75rem;
+  flex-wrap: wrap;
+  background-color: hsl(207, 26%, 17%);
+}
+
+.item {
+  width: calc((100% / 4) - 50px);
+  background-color: hsl(209, 23%, 22%);
+  border-radius: 0.5rem;
+  color: hsl(0, 0%, 100%);
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 1024px) {
+  .grid {
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:3.75rem;
+    flex-wrap: wrap;
+    background-color: hsl(207, 26%, 17%);
+  }
+
+  .item {
+    width: calc((100% / 3 - 40px));
+    background-color: hsl(209, 23%, 22%);
+    border-radius: 0.5rem;
+    color: hsl(0, 0%, 100%);
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 300;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .grid {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    gap:3.75rem;
+    flex-wrap: wrap;
+    background-color: hsl(207, 26%, 17%);
+  }
+
+  .item {
+    width: calc((100%) / 2 - 40px);
+    background-color: hsl(209, 23%, 22%);
+    border-radius: 0.5rem;
+    color: hsl(0, 0%, 100%);
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 300;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .grid {
+    display: flex;
+    /* gap:3.75rem; */
+    flex-wrap: wrap;
+    background-color: hsl(207, 26%, 17%);
+  }
+
+  .item {
+    width: calc((100%));
+    background-color: hsl(209, 23%, 22%);
+    border-radius: 0.5rem;
+    color: hsl(0, 0%, 100%);
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 300;
+  }
+}

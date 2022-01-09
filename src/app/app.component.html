@@ -9,15 +9,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,600;0,800;1,300&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="topnav" style="padding-inline: 60px;">
+  <div class="topnav" style="padding: 0.7rem 3rem 1.5rem 1.5rem;">
     <ul>
       <li>Where in the world?</li>
       <li style="float:right">Change theme</li>
+      <!-- <button (click)="onChangeTheme()">Change theme</button> -->
     </ul>
   </div>
-  <div class="grid" style="padding: 60px;">
-    <!-- <router-outlet></router-outlet> -->
-    <app-country class="item" *ngFor="let c of countries" [country]="[c.name.common]"></app-country>
-  </div>
+  <router-outlet></router-outlet>
 </body>
 </html>

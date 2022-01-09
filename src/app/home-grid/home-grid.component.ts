@@ -1,15 +1,15 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { CountriesService } from './countries.service';
-import { HttpClient } from '@angular/common/http';
-import { ICountry } from './country';
+import { CountriesService } from '../countries.service';
+import { ICountry } from '../country';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-home-grid',
+  templateUrl: './home-grid.component.html',
+  styleUrls: ['./home-grid.component.css']
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class HomeGridComponent implements OnInit, OnDestroy {
   title = 'load-challenge';
   countries: object[];
   private countryListSubs: Subscription;
@@ -38,12 +38,8 @@ export class AppComponent implements OnInit, OnDestroy {
         }
       }
     })
-  }
 
-  // onChangeTheme() {
-  //   let element = document.getElementById(".topnav");
-  //   element.ontoggle('dark-mode');
-  // }
+  }
 
   ngOnInit(): void {
     //this.cService.fetchCountries();
@@ -57,4 +53,5 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.countryListSubs.unsubscribe();
   }
+
 }
